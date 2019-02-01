@@ -1,4 +1,4 @@
-package pl.tomek.sut.tankbattle.items;
+package pl.tomek.sut.tankbattle;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -22,7 +22,7 @@ public class Controller {
     public Controller(){
         cam = new OrthographicCamera();
         viewport = new FitViewport(800,480,cam);
-        stage = new Stage(viewport,TankBattle.batch);//, ???
+        //stage = new Stage(viewport,TankBattle.batch);//, ???????????????????????????????
         Gdx.input.setInputProcessor(stage);
 
         //table for controllers
