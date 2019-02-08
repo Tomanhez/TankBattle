@@ -42,7 +42,7 @@ public abstract class AbstractScreen implements Screen{
     public void render(float delta) {
         clearScreen();
         camera.update();
-        spriteBatch.setProjectionMatrix(camera.combined);//TODO
+        spriteBatch.setProjectionMatrix(camera.combined);//???
     }
 
     private void clearScreen() {
