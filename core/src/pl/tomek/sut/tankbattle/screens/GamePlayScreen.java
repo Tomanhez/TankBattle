@@ -6,14 +6,12 @@ import pl.tomek.sut.tankbattle.items.Tank;
 public class GamePlayScreen extends AbstractScreen{
 
     Tank tank;
-    TankBattle game;
 
     public GamePlayScreen(TankBattle game) {
         super(game);
-        this.game = game;
-        init();
     }
 
+    @Override
     public void init(){
         tank = new Tank(game);
         stage.addActor(tank);

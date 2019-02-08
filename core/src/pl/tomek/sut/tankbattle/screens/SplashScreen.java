@@ -7,12 +7,8 @@ import pl.tomek.sut.tankbattle.TankBattle;
 
 public class SplashScreen extends AbstractScreen {
 
-    TankBattle game;
-
     public SplashScreen(final TankBattle game) {
         super(game);
-        this.game = game;
-        init();
         changeScreen();
     }
 
@@ -26,6 +22,7 @@ public class SplashScreen extends AbstractScreen {
         }, 2);
     }
 
+    @Override
     public void init(){
 //        if(Gdx.input.justTouched()){
 //            game.setScreen(new GamePlayScreen(game));}

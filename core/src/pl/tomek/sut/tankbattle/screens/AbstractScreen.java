@@ -7,7 +7,6 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.viewport.FitViewport;
-import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
 import pl.tomek.sut.tankbattle.TankBattle;
@@ -30,7 +29,10 @@ public abstract class AbstractScreen implements Screen{
         viewport = new FitViewport(TankBattleConfig.VIEWPORT_WIDTH, TankBattleConfig.VIEWPORT_HEIGHT, camera);
         stage = new Stage(viewport);
         Gdx.input.setInputProcessor(stage);
+        init();
     }
+
+    protected abstract void init();
 
     private void createCamera(){
         camera = new OrthographicCamera();
