@@ -14,16 +14,16 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 import pl.tomek.sut.tankbattle.TankBattle;
 
 public class Controller {
-    Viewport viewport;
-    Stage stage;
+    //Viewport viewport;
+    //Stage stage;
     boolean upPressed,downPressed,leftPressed,rightPressed;
-    OrthographicCamera cam;
+    //OrthographicCamera cam;
 
     public Controller(){
-        cam = new OrthographicCamera();
-        viewport = new FitViewport(800,480,cam);
+        //cam = new OrthographicCamera();
+        //viewport = new FitViewport(800,480,cam);
         //stage = new Stage(viewport,TankBattle.batch);//, ???????????????????????????????
-        Gdx.input.setInputProcessor(stage);
+        //Gdx.input.setInputProcessor(stage);
 
         //table for controllers
         Table table = new Table();
@@ -100,13 +100,13 @@ public class Controller {
         table.add(downImg).size(downImg.getWidth(),downImg.getHeight());
         table.add();
 
-        stage.addActor(table);
+        //stage.addActor(table);
 
     }
 
-    public void draw(){
-        stage.draw();
-    }
+//    public void draw(){
+//        stage.draw();
+//    }
 
     public boolean isUpPressed() {
         return upPressed;
@@ -124,7 +124,7 @@ public class Controller {
         return rightPressed;
     }
 
-    public void resize(int width,int height){
-        viewport.update(width,height);
-    }
+//    public void resize(int width,int height){
+//        viewport.update(width,height);
+//    }
 }
