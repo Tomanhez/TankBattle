@@ -3,6 +3,7 @@ package pl.tomek.sut.tankbattle;
 import com.badlogic.gdx.Game;
 
 import pl.tomek.sut.tankbattle.screens.GamePlayScreen;
+import pl.tomek.sut.tankbattle.screens.IntroScreen;
 import pl.tomek.sut.tankbattle.screens.SplashScreen;
 
 public class TankBattle extends Game {
@@ -22,7 +23,7 @@ public class TankBattle extends Game {
 		assets.manager.finishLoading();
 		if(assets.manager.update()){
 			//If all assets are loaded game starting
-			this.setScreen(new SplashScreen(this));
+			this.setScreen(new IntroScreen(this));
 		}
 	}
 	
