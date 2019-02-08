@@ -6,6 +6,9 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.utils.viewport.FitViewport;
+import com.badlogic.gdx.utils.viewport.StretchViewport;
+import com.badlogic.gdx.utils.viewport.Viewport;
 
 import pl.tomek.sut.tankbattle.TankBattle;
 import pl.tomek.sut.tankbattle.TankBattleConfig;
@@ -16,6 +19,7 @@ public abstract class AbstractScreen implements Screen{
     protected Stage stage;
     protected OrthographicCamera camera;
     protected SpriteBatch spriteBatch;
+    protected Viewport viewport;
 
 
 
@@ -23,6 +27,9 @@ public abstract class AbstractScreen implements Screen{
         this.game = game;
         createCamera();
         spriteBatch = new SpriteBatch();
+        viewport = new FitViewport(TankBattleConfig.VIEWPORT_WIDTH, TankBattleConfig.VIEWPORT_HEIGHT, camera);
+        stage = new Stage(viewport);
+        Gdx.input.setInputProcessor(stage);
     }
 
     private void createCamera(){
@@ -35,7 +42,7 @@ public abstract class AbstractScreen implements Screen{
     public void render(float delta) {
         clearScreen();
         camera.update();
-        spriteBatch.setProjectionMatrix(camera.combined);
+        spriteBatch.setProjectionMatrix(camera.combined);//TODO
     }
 
     private void clearScreen() {
@@ -56,7 +63,9 @@ public abstract class AbstractScreen implements Screen{
 
 
     @Override
-    public void resize(int width, int height) {}
+    public void resize(int width, int height) {
+        viewport.update(width, height);
+    }
     @Override
     public void hide() {}
     @Override
