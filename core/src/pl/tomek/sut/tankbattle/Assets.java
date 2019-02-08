@@ -18,6 +18,8 @@ public class Assets implements Disposable {
         manager.load("tank.png", Texture.class);
         manager.load("music.mp3", Music.class);
         manager.load("sfx_wing.ogg", Sound.class);
+        manager.load("badlogic.jpg",Texture.class);
+        manager.load("play.png",Texture.class);
     }
 
 

@@ -4,11 +4,15 @@ import com.badlogic.gdx.utils.Timer.Task;
 import com.badlogic.gdx.utils.Timer;
 
 import pl.tomek.sut.tankbattle.TankBattle;
+import pl.tomek.sut.tankbattle.items.PlayButton;
 
 public class SplashScreen extends AbstractScreen {
 
+    PlayButton playButton;
+
     public SplashScreen(final TankBattle game) {
         super(game);
+        init();
         changeScreen();
     }
 
@@ -24,8 +28,8 @@ public class SplashScreen extends AbstractScreen {
 
     @Override
     public void init(){
-//        if(Gdx.input.justTouched()){
-//            game.setScreen(new GamePlayScreen(game));}
+        playButton = new PlayButton(game);
+        stage.addActor(playButton);
     }
 
     @Override
@@ -36,6 +40,7 @@ public class SplashScreen extends AbstractScreen {
 
     private void draw() {
         spriteBatch.begin();
+        stage.draw();
         spriteBatch.end();
     }
 
