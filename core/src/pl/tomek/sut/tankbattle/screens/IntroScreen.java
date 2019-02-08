@@ -1,5 +1,7 @@
 package pl.tomek.sut.tankbattle.screens;
 
+import com.badlogic.gdx.audio.Sound;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.utils.Timer;
 
 import pl.tomek.sut.tankbattle.TankBattle;
@@ -22,12 +24,14 @@ public class IntroScreen extends AbstractScreen {
                 game.setScreen(new SplashScreen(game));
             }
 
-        }, 3);
+        }, 4);
     }
     @Override
     protected void init() {
         introImage = new IntroImage(game);
         stage.addActor(introImage);
+        game.getAssets().manager.get("intro.wav", Sound.class).play();
+
     }
 
     @Override
