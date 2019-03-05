@@ -5,7 +5,7 @@ import com.badlogic.gdx.Game;
 import pl.tomek.sut.tankbattle.screens.GamePlayScreen;
 import pl.tomek.sut.tankbattle.screens.IntroScreen;
 import pl.tomek.sut.tankbattle.screens.SplashScreen;
-
+//Test
 public class TankBattle extends Game {
 
 	private Assets assets;//asset manager
